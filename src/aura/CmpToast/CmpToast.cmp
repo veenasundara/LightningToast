@@ -1,0 +1,36 @@
+<!-- Component: 	CmpToast -->
+<!-- Created by: 	OpFocus(Veena Sundara-Heragu) on 12/26/2018 -->
+<!-- Description: 	Component to show an toast -->
+<aura:component description="CmpToast">
+    <aura:attribute name="name" type="String" access="public" />
+    <aura:attribute name="message" type="String" access="public" description="message displayed below title above buttons"/>
+    <aura:attribute name="theme" type="String" access="public" default="error" description="success,warning,error,info"/>
+    <aura:attribute name="mode" type="String" access="public" default="dismissible" description="pester,sticky,dismissible"/>
+
+    <aura:attribute name="isVisible" type="Boolean" access="private" default="false"/>
+
+    <!-- use this from parent component -->
+    <aura:method name="showToast" action="{!c.showToast}">
+        <aura:attribute name="theme" type="String" description="success,warning,error,info"/>
+        <aura:attribute name="message" type="String" description="message displayed below title above buttons"/>
+        <aura:attribute name="mode" type="String" description="pester,sticky,dismissible"/>
+    </aura:method>
+
+    <div class="{!v.isVisible ? 'slds-notify_container slds-is-relative' : 'slds-notify_container slds-is-relative slds-hide'}">
+        <div class="{!'slds-notify slds-notify_toast slds-theme_' + v.theme }" role="status">
+            <span class="slds-assistive-text">error</span>
+            <lightning:icon iconName="{!'utility:' + v.theme}" size="small" alternativeText="{!v.theme}"
+                            class="slds-m-right_large" variant="inverse"/>
+            <div class="slds-notify__content">
+                <h2 class="slds-text-heading_small ">{!v.message}</h2>
+            </div>
+            <aura:if isTrue="{!v.mode != 'pester'}">
+                <div class="slds-notify__close">
+                    <lightning:buttonIcon iconName="utility:close" alternativeText="Close" variant="bare-inverse"
+                                          onclick="{!c.close}" size="large"/>
+                </div>
+            </aura:if>
+        </div>
+    </div>
+
+</aura:component>
