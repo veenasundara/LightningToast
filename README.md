@@ -14,21 +14,43 @@ This component can be used to display toasts on quick action modals
 <c:CmpToast aura:id="toast" />
 ```
 
+```
 Optional parameters are:
 * name 
 * mode - pester,sticky,dismissible works just like force:showToast
 dismissible: Remains visble until you press the close button or 3 seconds have elapsed, whichever 				comes first. (This is the default)
 pester: Remains visible for 3 seconds. No close button is displayed.
 sticky: Remains visible until you press the close buttons.
+```
 
-2. add the following code display an error toast:
+```
+The component has the following methods
+* showError
+* showSuccess
+* showInfo
+* showWarning
+
+All the methods take 2 parameters
+* message - a String that will be displayed on the toast
+* mode (sticky, pester, dismissible) - this is optional. default will be dismissible
+```
+
+Examples:
+* To display an error toast:
 
 ```javascript
 component.find("toast").showError('Error Message');
 ```
 
-3. add the following code to your lightning javascript to display an error toast:
+* To display a success toast:
 
 ```javascript
 component.find("toast").showSuccess('Success Message');
 ```
+
+## Install using the button below:
+
+<a href="https://githubsfdeploy.herokuapp.com?owner=veenasundara&repo=LightningToast">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
+</a>
