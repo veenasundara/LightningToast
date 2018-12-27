@@ -18,9 +18,9 @@ This component can be used to display toasts on quick action modals
 Optional parameters are:
 * name 
 * mode - pester,sticky,dismissible works just like force:showToast
-		dismissible: Remains visble until you press the close button or 3 seconds have elapsed, whichever 				comes first. (This is the default)
-		pester: Remains visible for 3 seconds. No close button is displayed.
-		sticky: Remains visible until you press the close buttons.
+	dismissible: Remains visble until you press the close button or 3 seconds have elapsed, whichever 				comes first. (This is the default)
+	pester: Remains visible for 3 seconds. No close button is displayed.
+	sticky: Remains visible until you press the close buttons.
 ```
 
 ```
