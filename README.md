@@ -2,7 +2,7 @@
 
 Component to display toasts on quick action modal 
 
-When force:showToast or lightning:notificationsLibrary are used to display toasts from a ligthning component that is used as a quick action, the toasts are displayed on the main page behind the quick action modal.
+When force:showToast or lightning:notificationsLibrary are used to display toasts from a lightning component that is used as a quick action, the toasts are displayed on the main page behind the quick action modal.
 
 This component can be used to display toasts on quick action modals
 
