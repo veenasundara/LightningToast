@@ -23,7 +23,7 @@ Optional parameters are:
 	pester: Remains visible for 3 seconds. No close button is displayed.
 	sticky: Remains visible until you press the close buttons.
 
-	If it is set here, it will be applied ao all calls to the methods described below unless it is
+	If it is set here, it will be applied to all calls to the methods described below unless it is
 	overridden using the method's mode parameter
 ```
 
