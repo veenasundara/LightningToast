@@ -9,12 +9,25 @@
 
     <aura:attribute name="isVisible" type="Boolean" access="private" default="false"/>
 
-    <!-- use this from parent component -->
-    <aura:method name="showToast" action="{!c.showToast}">
-        <aura:attribute name="theme" type="String" description="success,warning,error,info"/>
+    <!-- use these from parent component -->
+    <aura:method name="showError" action="{!c.showError}">
         <aura:attribute name="message" type="String" description="message displayed below title above buttons"/>
         <aura:attribute name="mode" type="String" description="pester,sticky,dismissible"/>
     </aura:method>
+    <aura:method name="showSuccess" action="{!c.showSuccess}">
+        <aura:attribute name="message" type="String" description="message displayed below title above buttons"/>
+        <aura:attribute name="mode" type="String" description="pester,sticky,dismissible"/>
+    </aura:method>
+    <aura:method name="showWarning" action="{!c.showWarning}">
+        <aura:attribute name="message" type="String" description="message displayed below title above buttons"/>
+        <aura:attribute name="mode" type="String" description="pester,sticky,dismissible"/>
+    </aura:method>
+    <aura:method name="showInfo" action="{!c.showInfo}">
+        <aura:attribute name="message" type="String" description="message displayed below title above buttons"/>
+        <aura:attribute name="mode" type="String" description="pester,sticky,dismissible"/>
+    </aura:method>
+
+
 
     <div class="{!v.isVisible ? 'slds-notify_container slds-is-relative' : 'slds-notify_container slds-is-relative slds-hide'}">
         <div class="{!'slds-notify slds-notify_toast slds-theme_' + v.theme }" role="status">

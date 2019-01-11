@@ -1,27 +1,22 @@
 ({
-    showToast : function(component, event, helper) {
+    showError : function(component, event, helper) {
 
-        var eventParams = event.getParam('arguments');
-        if (eventParams)
-        {
-            if(!$A.util.isEmpty(eventParams.theme)) component.set("v.theme", eventParams.theme);
-            if(!$A.util.isEmpty(eventParams.message)) component.set("v.message", eventParams.message);
-            if(!$A.util.isEmpty(eventParams.mode)) component.set("v.mode", eventParams.mode);
-        }
+        helper.hlpShowToast(component, event, 'error')
+    },
 
-        component.set("v.isVisible", true);
+    showInfo : function(component, event, helper) {
 
-        var mode = component.get("v.mode");
-        if(mode != 'sticky')
-        {
-            // close after 3 seconds
-            window.setTimeout(
-                $A.getCallback(function ()
-                               {
-                                   component.set("v.isVisible", false);
-                               }), 3000
-            );
-        }
+        helper.hlpShowToast(component, event, 'info')
+    },
+
+    showSuccess : function(component, event, helper) {
+
+        helper.hlpShowToast(component, event, 'success')
+    },
+
+    showWarning : function(component, event, helper) {
+
+        helper.hlpShowToast(component, event, 'warning')
     },
 
     close : function(component, event, helper) {
