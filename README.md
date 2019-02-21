@@ -1,4 +1,4 @@
-# LightningAlert
+# LightningToast
 
 Component to display toasts on quick action modal 
 
